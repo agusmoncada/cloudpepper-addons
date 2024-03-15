@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- <t t-inherit="mail.DiscussSidebarChannel" t-inherit-mode="extension">
+        <xpath expr="//*[@name='beforeCategoryChat']" position="before">
+            <t t-set="categoryWhatsapp" t-value="discussView.discuss.categoryWhatsapp"/>
+            <t t-if="categoryWhatsapp and categoryWhatsapp.categoryItems.length">
+                <DiscussSidebarCategory
+                    className="'o_DiscussSidebar_category o_DiscussSidebar_categoryWhatsapp'"
+                    record="categoryWhatsapp"
+                />
+            </t>
+        </xpath>
+    </t> -->
+    <t t-name="whatsapp.DiscussSidebarChannel" t-inherit="mail.DiscussSidebarChannel" t-inherit-mode="extension">
+        <xpath expr="//ThreadIcon" position="attributes">
+            <attribute name="t-if" add="or thread.type === 'whatsapp'" separator=" " />
+        </xpath>
+    </t>
+</templates>
